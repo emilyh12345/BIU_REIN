@@ -27,10 +27,13 @@ The goal of this project is to gradually filter out less-likely gene interaction
 A number of new features and improvements were implemented as abstractions on top of the RE:IN tool. We built 2 tools: 
 
 
-### 1 | user_level 
+### 1 | User Threshold Tool 
 ----------
 Allows the user to enter a threshold number and create a new .rein file  without optional interactions with confidence levels that fall outside the threshold. Also creates a text file of commands to be entered in RE:IN.
-- After compiling and running the program user_level.py, the user is prompted: “enter a threshold number: ”
+- After compiling and running the program user_level.py, the user is prompted: 
+    ```
+    Enter a threshold number:
+    ```
     - when this threshold number is applied, any optional interactions whose confidence level is outside of the user threshold are eliminated from the output .rein file. 
 - Outside the threshold:
     - If the user threshold = positive: eliminate optional interactions whose confidence level is above the threshold and below the negative equivalent of the threshold
@@ -49,12 +52,15 @@ Allows the user to enter a threshold number and create a new .rein file  without
         ```
 
 
-### 2 | automatic_levels_threshold
+### 2 | Automatic Levels Threshold Tool
 ----------
 Allows a user to choose the number of output .rein files to create. It then creates this number of .rein files by automatically calculating and applying different threshold numbers which will divide the optional interactions in the most linear way possible.
 
 
-- After compiling and running the program automatic_levels_threshold.py, the user is prompted: “Enter a value for number of levels you want to test: ”
+- After compiling and running the program automatic_levels_threshold.py, the user is prompted: 
+    ```
+    Enter a value for number of levels you want to test: 
+    ```
     - Levels- number of new output .rein files to create from the original .rein file
     - Based on the number of total optional interactions in the original file, our tool automatically calculates the thresholds which will output the desired number of files
     - It then distributes a linearly decreasing amount of optional interactions into each respective file using the previously calculated thresholds 
