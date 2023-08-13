@@ -53,10 +53,8 @@ for row in sheet.iter_rows():
         with open(rein_file_given, "r") as file:
             lines = file.readlines()
         for line in lines: 
-            #if numeric_value > 0:
             if f"{gene1} {gene2} positive optional" in line and numeric_value>0:
                 optionalValuesArray.append(numeric_value)
-            #if numeric_value < 0:
             if  f"{gene1} {gene2} negative optional" in line and numeric_value<0:
                 optionalValuesArray.append(numeric_value)
 
