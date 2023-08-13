@@ -31,7 +31,7 @@ A number of new features and improvements were implemented as abstractions on to
 ### 1 | User Threshold Tool 
 ----------
 Allows the user to enter a threshold number and create a new .rein file  without optional interactions with confidence levels that fall outside the threshold. Also creates a text file of commands to be entered in RE:IN.
-- After compiling and running the program user_level.py, the user is prompted: 
+- After compiling and running the program **user_threshold.py**, the user is prompted: 
     ```
     Enter a threshold number:
     ```
@@ -58,7 +58,7 @@ Allows the user to enter a threshold number and create a new .rein file  without
 Allows a user to choose the number of output .rein files to create. It then creates this number of .rein files by automatically calculating and applying different threshold numbers which will divide the optional interactions in the most linear way possible.
 
 
-- After compiling and running the program automatic_levels_threshold.py, the user is prompted: 
+- After compiling and running the program **automatic_levels_threshold.py**, the user is prompted: 
     ```
     Enter a value for number of levels you want to test: 
     ```
