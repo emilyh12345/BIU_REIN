@@ -28,11 +28,10 @@ def count_occurrences_to_left_from_index(numbers, target, index):
 
 #path to the original rein file with all interactions
 rein_file_given = input("enter the path of a rein file: ")
-#rein_file_given=  "/Users/nicolehaller/Downloads/Pearson792With23SpecificationsLegacy.rein"
 
 # read in the corresponding excel chart file 
 excel_file = input("enter the path of an excel file: ")
-#excel_file = "/Users/nicolehaller/Downloads/CPM_timecourseV3official.xlsx"
+
 wb = openpyxl.load_workbook(excel_file)
 sheet = wb.active
 
@@ -54,7 +53,11 @@ for row in sheet.iter_rows():
         with open(rein_file_given, "r") as file:
             lines = file.readlines()
         for line in lines: 
-            if f"{gene1} {gene2} positive optional" in line or f"{gene1} {gene2} negative optional" in line:
+            #if numeric_value > 0:
+            if f"{gene1} {gene2} positive optional" in line and numeric_value>0:
+                optionalValuesArray.append(numeric_value)
+            #if numeric_value < 0:
+            if  f"{gene1} {gene2} negative optional" in line and numeric_value<0:
                 optionalValuesArray.append(numeric_value)
 
 # 2) sort the optional values array in ascending order
@@ -168,12 +171,12 @@ for i in range(0, levels, 1): #0, levels, 1
             numeric_value = cell.value 
             #if threshold is a positive number then print to file all relationships above that number and optional 
             if threshold_number > 0: 
-               if numeric_value > threshold_number: 
+                if numeric_value > threshold_number: 
                   for line in lines:
                      if f"{gene1} {gene2} positive optional" in line:
                         rein_file_writer.write(line + "\n")
                         print (line + "\n") 
-               if numeric_value < -(threshold_number):
+                if numeric_value < -(threshold_number):
                      if f"{gene1} {gene2} negative optional" in line:
                         rein_file_writer.write(line + "\n")
                         print (line + "\n")
