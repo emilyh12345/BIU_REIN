@@ -25,7 +25,7 @@ The goal of this project is to gradually filter out less-likely gene interaction
 
 ## Projects
 ----------
-A number of new features and improvements were implemented as abstractions on top of the RE:IN tool. We built 2 tools: 
+A number of new features and improvements were implemented as abstractions on top of the RE:IN tool. <br /> We built 2 tools: 
 
 
 ### 1 | User Threshold Tool 
