@@ -19,7 +19,7 @@ The goal of this project is to gradually filter out less-likely gene interaction
 
 
 
->*NOTE: this README assumes prior familiarity with [RE:IN](https://www.microsoft.com/en-us/research/project/reasoning-engine-for-interaction-networks-rein/). For an explanation of the technical background (both biological and computational), see abstract [here](https://docs.google.com/document/d/1wbwPwVejVthu6vLt7EooxjrM7Xpp4t5EssfZuHJc_mI/edit?usp=sharing)
+>*NOTE: this README assumes prior familiarity with [RE:IN](https://www.nature.com/articles/npjsba201610). For an explanation of the technical background (both biological and computational), see abstract [here](https://docs.google.com/document/d/1wbwPwVejVthu6vLt7EooxjrM7Xpp4t5EssfZuHJc_mI/edit?usp=sharing)
 
 
 ## Projects
@@ -82,3 +82,9 @@ Allows a user to choose the number of output .rein files to create. It then crea
         ReinAPI.CheckAndPrint model792
         the threshold was: 0.866548157720856
         ```
+>*RULES:
+>- If a cell in the excel file doesn’t correspond to its matching .rein file, our program doesn’t consider this interaction. Therefore, it's possible that the original .rein file and the first outputFile0.rein could differ.
+>- If the number of optional interactions divided by the number of levels the user enters is not a whole number, our program takes the floor of that number
+    <br />- Example: 40 optional interactions, 3 levels, (40/3= floor(13.333) = 13)- for the smallest file, the program will find a threshold number that filters the file so that only 13 optional interactions remain (if impossible, see rule 3 below). Next, the program will look to create a second file which contains 26 optional interactions, and the third which contains 40 optional interactions.
+>- If there is no threshold that outputs the exact number of optional interactions we desire, our program looks for the threshold that will output the next closest number of optional interactions (starting with a number lower than the desired number)
+    <br />- Example: if we are looking for a threshold that outputs 5 optional interactions and we don't find one, we will look for the threshold that outputs 4 interactions, and if this isn’t found it looks for 6, etc.
