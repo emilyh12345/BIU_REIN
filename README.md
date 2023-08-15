@@ -13,7 +13,7 @@ Advised by Prof Hillel Kugler and PhD student Eitan Tannenbaum as part of the BI
 The goal of this project is to gradually filter out less-likely gene interactions in .rein files that cause RE:IN to output unrealistic gene network models. This allows users to more efficiently test .rein files for satisfiability and to more accurately study gene interactions.
 
 
-- I. The first tool works by storing a threshold number that is requested by the user and it uses this threshold number to automatically eliminate some optional interactions from the  original .rein file. These interactions are stored in a new filtered .rein file.
+- I. The first tool works by storing a threshold number that is requested by the user and it uses this threshold number to automatically eliminate some optional interactions from the original .rein file. These interactions are stored in a new filtered .rein file.
 
 
 - II. The second tool works by comparing optional interactions in a .rein file and a corresponding excel file which contains numbers indicating how confident we are that an optional interaction will occur. It then prompts the user for the number of new filtered out .rein files they want. Based on this number and the number of optional interactions present in the original .rein file, our program calculates threshold numbers that will output a gradually decreasing (and uniform) number of optional interactions in each new output .rein file it creates. Our program also outputs a text file of commands to input into RE:IN so that they can be tested.
